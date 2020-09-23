@@ -71,7 +71,7 @@ namespace PasswordGenerator
             int GeneLength = GeneratePassword.Length;
             for(int i = 0; i < PassLength - GeneLength; i++)
             {
-                int CharPlace = rnd.Next(AddPassword.Length);
+                int CharPlace = rnd.Next(allChars.Length);
                 GeneratePassword += allChars[CharPlace].ToString();
             }
             return GeneratePassword;
