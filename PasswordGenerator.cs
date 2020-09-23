@@ -12,9 +12,9 @@ namespace PasswordGenerator
         private const string SpecialChars = "~!@#$%^&*()_+=`{}[]\\|':;.,/?<>";
         private const string allChars = CapitalLetters + smallLettes + Digits + SpecialChars;
         private static Random rnd = new Random();
-        private static int PassLength = rnd.Next(8, 15);
         public string Generating()
         {
+            int PassLength = rnd.Next(8, 15);
             string AddCL = null;
             string AddSL = null;
             string addDigit = null;
