@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,7 +21,6 @@ namespace PasswordGenerator
             string GeneratePassword = null;
             string[] Password = new string[PassLength];
             string addSpecial = null;
-            bool whileLoop = true;
             for(int i = 0; i < 2; i++)
             {
                 int GetCL = rnd.Next(CapitalLetters.Length);
@@ -46,7 +45,7 @@ namespace PasswordGenerator
             string AddPassword = AddCL + AddSL + addDigit + addSpecial;
             for (int i = 0; i < AddPassword.Length; i++)
             {
-                whileLoop = true;
+                bool whileLoop = true;
                 int PasswordPlace = rnd.Next(AddPassword.Length);
                 if(Password[PasswordPlace] == null)
                 {
@@ -67,10 +66,10 @@ namespace PasswordGenerator
             }
             for(int i = 0; i < PassLength; i++)
             {
-                
                 GeneratePassword += Password[i];
             }
-            for(int i = 0; i < PassLength - GeneratePassword.Length; i++)
+            int GeneLength = GeneratePassword.Length;
+            for(int i = 0; i < PassLength - GeneLength; i++)
             {
                 int CharPlace = rnd.Next(AddPassword.Length);
                 GeneratePassword += allChars[CharPlace].ToString();
